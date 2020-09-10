@@ -17,6 +17,7 @@ class App extends React.Component{
         <Route path="/RM" exact render={()=><Homepage page="RM"/>} />
         <Route path="/BAM" exact render={()=><Homepage page="BAM"/>} />
         <Route path="/SG" exact render={()=><Homepage page="SG"/>} />
+        <Route path="/BONVOYAGE" exact render={()=><Homepage page="BONVOYAGE"/>} />
         {/* <Route path="/UpDaTe" exact component={Update} /> */}
       </div>
     );

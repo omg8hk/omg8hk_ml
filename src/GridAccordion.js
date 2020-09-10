@@ -16,28 +16,29 @@ class GridAccordion extends React.Component{
         this.isST=false; //Special Trigger
         this.htmlEle="";
     }
-    componentDidUpdate(){
+    componentDidMount(){
         if(this.props.arr!==[]&&!this.isSelect){
             $( '#cbp-ntaccordion' ).cbpNTAccordion();
+            console.log(22);
             this.isSelect=true;
         }
     }
-    componentDidMount(){
-        // var acc = document.getElementsByClassName("accordion");
-        // var i;
+    // componentDidMount(){
+    //     var acc = document.getElementsByClassName("cbp-ntaccordion");
+    //     var i;
 
-        // for (i = 0; i < acc.length; i++) {
-        //     acc[i].addEventListener("click", function() {
-        //         this.classList.toggle("active");
-        //         var panel = this.nextElementSibling;
-        //         if (panel.style.maxHeight) {
-        //             panel.style.maxHeight = null;
-        //         } else {
-        //             panel.style.maxHeight = panel.scrollHeight + "px";
-        //         }
-        //     });
-        // }
-    }
+    //     for (i = 0; i < acc.length; i++) {
+    //         acc[i].addEventListener("click", function() {
+    //             this.classList.toggle("active");
+    //             var panel = this.nextElementSibling;
+    //             if (panel.style.maxHeight) {
+    //                 panel.style.maxHeight = null;
+    //             } else {
+    //                 panel.style.maxHeight = panel.scrollHeight + "px";
+    //             }
+    //         });
+    //     }
+    // }
     render(){
         if (Array.isArray(this.props.arr) && this.props.arr.length) {
             var parse = require('html-react-parser');
@@ -54,6 +55,7 @@ class GridAccordion extends React.Component{
                                                     <div className="box">
                                                         <div className="content">
                                                             <header className="align-center">
+                                                                <p>[{item.tag}]</p>
                                                                 <h2>[{item.title}]</h2>
                                                             </header>
                                                             <footer className="align-center">
@@ -72,6 +74,7 @@ class GridAccordion extends React.Component{
                                                         </div>
                                                         <div className="content">
                                                             <header className="align-center">
+                                                                <p>{item.tag}</p>
                                                                 <h2>[{item.title}]</h2>
                                                             </header>
                                                             <footer className="align-center">
@@ -105,7 +108,7 @@ class GridAccordion extends React.Component{
                                             this.htmlEle+='</ul>';
                                         }
                                         this.lvl=1;
-                                        if(item.subtitle==="")
+                                        if(item.subtitle===""||typeof item.subtitle==='undefined')
                                             this.htmlEle+='<li><h3 class="cbp-nttrigger">'+item.date+'</h3><div class="cbp-ntcontent"><p>'+item.title+' '+item.subtitle+'<br /><a href="'+item.link+'" target="_blank">'+item.link+'</a></p>';
                                         else
                                         {
@@ -119,7 +122,7 @@ class GridAccordion extends React.Component{
                                         {
                                             if(this.lastT!==item.title)
                                             {
-                                                if(item.subtitle==="")
+                                                if(item.subtitle===""||typeof item.subtitle==='undefined')
                                                 {
                                                     this.lvl=1;
                                                     this.htmlEle+= '</ul><p>'+item.title+' '+item.subtitle+'<br /><a href="'+item.link+'" target="_blank">'+item.link+'</a></p>';
@@ -132,7 +135,7 @@ class GridAccordion extends React.Component{
                                         }
                                         else
                                         {
-                                            if(item.subtitle==="")
+                                            if(item.subtitle===""||typeof item.subtitle==='undefined')
                                             {
                                                 if(this.lastT!==item.title)
                                                     this.htmlEle+= '<p>'+item.title+' '+item.subtitle+'<br /><a href="'+item.link+'" target="_blank">'+item.link+'</a></p>';
