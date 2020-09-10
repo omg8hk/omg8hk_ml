@@ -54,6 +54,7 @@ class Update extends React.Component{
                         'sentence': row._rawData[3],
                     }
                 );
+                return null;
             })
             this.setState({slideArr:result});
         }else if(name==='t2'){
@@ -66,6 +67,7 @@ class Update extends React.Component{
                             'link': row._rawData[2],
                         }
                     );
+                    return null;
                 })
             }else{
                 arr.map(row=>{
@@ -77,6 +79,7 @@ class Update extends React.Component{
                             'link': row._rawData[3],
                         }
                     );
+                    return null;
                 })
             }            
             this.setState({pageArr:result});

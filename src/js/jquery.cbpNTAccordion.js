@@ -9,9 +9,9 @@
  * http://www.codrops.com
  */
 import jQuery from "jquery";
-;( function( $, window, undefined ) {
+;( function( $, window) {
 
-	'use strict';
+	//'use strict';
 
 	// global
 	var $body = $( 'html, body' );

@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { Route } from 'react-router-dom';
 import Homepage from './Homepage';
-import Update from './Update';
+// import Update from './Update';
 class App extends React.Component{
   render() {
     return (
@@ -17,7 +17,7 @@ class App extends React.Component{
         <Route path="/RM" exact render={()=><Homepage page="RM"/>} />
         <Route path="/BAM" exact render={()=><Homepage page="BAM"/>} />
         <Route path="/SG" exact render={()=><Homepage page="SG"/>} />
-        <Route path="/UpDaTe" exact component={Update} />
+        {/* <Route path="/UpDaTe" exact component={Update} /> */}
       </div>
     );
   }

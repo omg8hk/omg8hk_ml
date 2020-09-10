@@ -10,7 +10,7 @@ class App extends React.Component{
     }
     componentDidMount(){
         let script = document.createElement("script");
-            script.src = "assets/js/main.js";
+            script.src = "/omg8hk_ml/assets/js/main.js";
             document.body.appendChild(script);
     }
     render() {

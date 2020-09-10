@@ -149,6 +149,7 @@ class GridAccordion extends React.Component{
                                     }
                                     this.lastT=item.title;	
                                     this.lastD=item.date;
+                                    return null;
                                 }
                                 )
                             }

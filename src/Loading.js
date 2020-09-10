@@ -4,7 +4,7 @@ class Loading extends React.Component{
         return (
             <div className="App">
                 <header className="App-header">
-                    <img className='App-logo' src={require('./images/loading.gif')} />
+                    <img className='App-logo' src={require('./images/loading.gif')} alt='loading'/>
                 </header>
             </div>
         );
